@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:mysql://10.10.121.219:3306/mysql?serverTimezone=UTC&useSSL=false
+    username: root
+    password: 123456
