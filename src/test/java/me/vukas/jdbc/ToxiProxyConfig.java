@@ -25,9 +25,11 @@ public class ToxiProxyConfig {
 		private static final Logger logger = LoggerFactory.getLogger(ToxiProxyConfig.class);
 
 		@Bean(initMethod = "start", destroyMethod = "stop")
-		public MySQLContainer mysqlContainer() {
+		public GenericContainer mysqlContainer() {
 			return new MySQLContainer()
-					.withPassword("123456");
+					.withPassword("123456")
+					.withConfigurationOverride("mysql_conf_override")
+					.withLogConsumer(new Slf4jLogConsumer(logger));
 		}
 
 		@Bean(initMethod = "start", destroyMethod = "stop")
