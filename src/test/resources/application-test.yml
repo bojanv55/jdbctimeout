@@ -1,5 +1,8 @@
 spring:
   datasource:
-    url: jdbc:tc:mysql:5.6.23://somehostname:someport/databasename
+    url: jdbc:mysql://10.10.121.219:3305/mysql?serverTimezone=UTC&useSSL=false
     username: root
     password: 123456
+    hikari:
+      data-source-properties:
+        #socketTimeout: 30000
